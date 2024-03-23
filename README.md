@@ -1,6 +1,7 @@
 # SuperPrompt-v1
 Very small AI Model that Makes your prompts better for AI Art
 Model Used: https://huggingface.co/roborovski/superprompt-v1
+Check the model blog here https://brianfitzgerald.xyz/prompt-augmentation/
 
 ## Usage Locally UI & NO UI
 
