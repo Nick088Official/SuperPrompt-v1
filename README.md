@@ -1,6 +1,8 @@
 # SuperPrompt-v1
-Very small AI Model that Makes your prompts better for AI Art
+Very small AI Model that Makes your prompts better for AI
+
 Model Used: https://huggingface.co/roborovski/superprompt-v1
+
 Check the model blog here https://brianfitzgerald.xyz/prompt-augmentation/
 
 ## Usage Locally UI & NO UI
@@ -27,10 +29,17 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-### UI (WARNING: COULD RISK YOUR GOOGLE COLAB FREE TIER ACC)
-Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_UI.ipynb">
+### UI 
+#### Ipywidgets
+Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_Ipywidgets_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+
+#### Gradio **(WARNING: COULD RISK YOUR GOOGLE COLAB FREE TIER ACC)**
+Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_Gradio_UI.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 
 ## Usage Hugging Face Space Online
 1. Go to https://huggingface.co/spaces/Nick088/SuperPrompt-v1.
