@@ -1,9 +1,12 @@
 # SuperPrompt-v1
+
+[![Discord](https://img.shields.io/discord/1198701940511617164?color=%23738ADB&label=Discord&style=for-the-badge)](https://discord.gg/dnrgs5GHfG)
+
 Very small AI Model that Makes your prompts better for AI
 
 Model Used: https://huggingface.co/roborovski/superprompt-v1
 
-Check the model blog here https://brianfitzgerald.xyz/prompt-augmentation/
+Check the model blog here: https://brianfitzgerald.xyz/prompt-augmentation/
 
 ## Usage Locally UI & NO UI
 
