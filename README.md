@@ -48,7 +48,7 @@ As its a very small model (77M parameters) it can run easily even on old PCs CPU
 12. Put the Top K, Higher k means more diverse outputs by considering a range of tokens, (from 1 to 100).
 13. Put the Seed, A starting point to initiate the generation process, any integers, put 0 if you want it to be random.
 14. After you will get the generated better prompt and it will start all again.
-15. If you want to delete it, open delete.bat and then put to the trash bin the .zip and folders of the SuperPrompt-v1.
+15. If you want to delete it, delete the venvs folder and then put to the trash bin the .zip and folders of the SuperPrompt-v1.
 
 ## Usage Google Colab Online
 ### NO UI
@@ -72,5 +72,16 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 1. Go to https://huggingface.co/spaces/Nick088/SuperPrompt-v1.
 2. Click the 3 dots in the up right corner and duplicate space (login if asked to, also you can just use cpu or use a paid gpu, it barely matters).
 3. After the space loads, write the prompt you want to be better.
-4. You can click additional inputs and change the repetition penalty, the higher the less the ai repeats itself, it goes from 1.0 to 2.0.
-5. Click Submit
+4. Click Additional Inputs
+5. Put the Max New Tokens, controls how long is the output, reccomended to the max which is 512.
+6. Put the Repetition Penalty, the higher the less the ai repeats itself (it goes from 1.0 to 2.0).
+7. Put the Temperature, Higher values produce more diverse outputs, (from 0 to 1).
+8. Put the Top P, Higher values sample more low-probability tokens, (from 0 to 2).
+9. Put the Top K, Higher k means more diverse outputs by considering a range of tokens, (from 1 to 100).
+10. Put the Seed, A starting point to initiate the generation process, any integers, put 0 if you want it to be random.
+11. Click Submit
+
+
+## CHANGELOG
+Update - April 14th, 2024
+Updated the local version to make it use venvs, Credits for it to [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx)
