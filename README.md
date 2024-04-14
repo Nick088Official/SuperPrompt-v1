@@ -11,11 +11,12 @@ Check the model blog here: https://brianfitzgerald.xyz/prompt-augmentation/
 ## Usage Locally UI & NO UI
 
 ### Python Code
-```
+
+```py
 pip install transformers
 ```
 if its your first time installing the package transformers on Windows, then you may wanna check this https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later.
-```
+```py
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-small")
