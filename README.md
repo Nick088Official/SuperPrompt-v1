@@ -81,7 +81,11 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 10. Put the Seed, A starting point to initiate the generation process, any integers, put 0 if you want it to be random.
 11. Click Submit
 
+## CREDITS
+- [Nick088](https://linktr.ee/Nick088) for the ports.
+- [roborovski](https://huggingface.co/roborovski) for making the AI Model
+- [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx) added venvs to the local version
 
 ## CHANGELOG
-Update - April 14th, 2024
+### Update - April 14th, 2024
 Updated the local version to make it use venvs, Credits for it to [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx)
