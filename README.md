@@ -67,7 +67,7 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-#### Gradio **(WARNING: COULD RISK YOUR GOOGLE COLAB FREE TIER ACC)**
+#### WEB **(WARNING: COULD RISK YOUR GOOGLE COLAB FREE TIER ACC)**
 Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_Gradio_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
