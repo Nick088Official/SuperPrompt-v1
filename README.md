@@ -8,6 +8,11 @@ Model Used: https://huggingface.co/roborovski/superprompt-v1
 
 Check the model blog here: https://brianfitzgerald.xyz/prompt-augmentation/
 
+## Examples
+![image](https://github.com/Nick088Official/SuperPrompt-v1/assets/91847579/890d2ee7-f5ff-4ddb-9f2f-b9ab20706849)
+
+![image](https://github.com/Nick088Official/SuperPrompt-v1/assets/91847579/9ab64937-87d4-4b4c-b086-77bcabda7bc4)
+
 ## Usage Locally UI & NO UI
 
 ### Python Code
