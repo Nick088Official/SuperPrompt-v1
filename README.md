@@ -92,5 +92,7 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 - [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx) added venvs to the local version
 
 ## CHANGELOG
+### Update - May 16th, 2024
+Improved the Local Version and removed the model precision option as in some cases fp32 wouldn't work like on cpu, so i used auto instead.
 ### Update - April 14th, 2024
 Updated the local version to make it use venvs, Credits for it to [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx)
