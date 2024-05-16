@@ -6,7 +6,6 @@ import gradio as gr
 import random
 import argparse
 
-os.environ['GRADIO_ANALYTICS_ENABLED'] = '0'
 
 if torch.cuda.is_available():
     device = "cuda"
