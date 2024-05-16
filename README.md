@@ -13,7 +13,7 @@ Check the model blog here: https://brianfitzgerald.xyz/prompt-augmentation/
 
 ![image](https://github.com/Nick088Official/SuperPrompt-v1/assets/91847579/9ab64937-87d4-4b4c-b086-77bcabda7bc4)
 
-## Usage Locally UI & NO UI
+## Local Usage
 
 ### Python Code
 
@@ -54,25 +54,25 @@ As its a very small model (77M parameters) it can run easily even on old PCs CPU
 13. After you will get the generated better prompt and it will start all again.
 14. If you want to delete it, delete the venvs folder and then put to the trash bin the .zip and folders of the SuperPrompt-v1.
 
-## Usage Google Colab Online
-### NO UI
+## Online Usage
+### Google Colab
+#### NO UI
 Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_Manual.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-### UI 
-#### Ipywidgets
+#### Ipywidgets UI
 Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_Ipywidgets_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-#### WEB **(WARNING: COULD RISK YOUR GOOGLE COLAB FREE TIER ACC)**
+#### WEB UI **(WARNING: COULD RISK YOUR GOOGLE COLAB FREE TIER ACC)**
 Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_WEB_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
 
-## Usage Hugging Face Space Online
+### Hugging Face Space
 1. Go to https://huggingface.co/spaces/Nick088/SuperPrompt-v1.
 2. Click the 3 dots in the up right corner and duplicate space (login if asked to, also you can just use cpu or use a paid gpu, it barely matters).
 3. After the space loads, write the prompt you want to be better.
