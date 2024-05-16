@@ -8,7 +8,18 @@ if not exist "%~dp0venv_ui\" (
 
     REM Create a virtual environment named "venv_ui" in the root directory
     python -m venv "%~dp0venv_ui"
+	
+    REM Print the step to the terminal
+    echo Activating the virtual environment...
 
+    REM Activate the virtual environment
+    call "%~dp0venv_ui\Scripts\activate.bat"
+	
+    REM Print the step to the terminal
+    echo Installing requirements...
+
+    REM Install requirements inside the virtual environment
+    pip install -r "%~dp0Scripts\requirements_ui.txt"
 ) else (
     echo Required packages are already installed and Virtual environment is already created.
 	
