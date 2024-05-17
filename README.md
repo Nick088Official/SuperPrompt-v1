@@ -9,9 +9,12 @@ Model Used: https://huggingface.co/roborovski/superprompt-v1
 Check the model blog here: https://brianfitzgerald.xyz/prompt-augmentation/
 
 ## Examples
-![image](https://github.com/Nick088Official/SuperPrompt-v1/assets/91847579/890d2ee7-f5ff-4ddb-9f2f-b9ab20706849)
+### 1
+This tool has been also used by a **Stable Diffusion 3 Beta Tester** and it shows how good it is and will be when everyone has access to SD 3: https://twitter.com/dark_sm1/status/1774054069126009032
+### 2
+**Your Prompt** (task prefix already setted): A storefront with 'Text to Image' written on it.
 
-![image](https://github.com/Nick088Official/SuperPrompt-v1/assets/91847579/9ab64937-87d4-4b4c-b086-77bcabda7bc4)
+**Generated Better Prompt:** The neon sign above the storefront reads "NeurIPS" in bold, white letters. The storefront is surrounded by a bustling cityscape, with skyscrapers and neon signs lining the walls. The sign is surrounded by a variety of colorful goods, including a variety of fruits, vegetables, and fruits, all arranged in a neat and organized manner. The storefront is surrounded by a bustling crowd of people, all chatting and laughing as they go about their daily routines.
 
 ## Local Usage
 
@@ -57,7 +60,7 @@ As its a very small model (77M parameters) it can run easily even on old PCs CPU
 ## Online Usage
 ### Google Colab
 #### NO UI
-Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_Manual.ipynb">
+Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Official/SuperPrompt-v1/blob/main/SuperPrompt_v1_NO_UI.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
