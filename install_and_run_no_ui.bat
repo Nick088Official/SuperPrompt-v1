@@ -38,12 +38,13 @@ set /p your_prompt="Enter your prompt: "
 set /p max_new_tokens="Enter the number of Max New Tokens (The maximum numbers of new tokens, controls how long is the output, int value from 256 to 512) : "
 set /p repetition_penalty="Enter the Repition Penalty (Penalize repeated tokens, making the AI repeat less itself, float value from 0.1 to 2.0) : "
 set /p temperature="Enter the model precision type (Higher values produce more diverse outputs, float value from 0.1 to 1.0): "
+set /p model_precision_type="Enter the model precision type (fp16 which is faster or fp32 which is more precise but more resource consuming): "
 set /p top_p="Enter the Top P (Higher values sample more low-probability tokens, float value from 0.1 to 2.0): "
 set /p top_k="Enter the Top K (Higher k means more diverse outputs by considering a range of tokens, int value from 1 to 100): "
 set /p seed="Enter the seed (A starting point to initiate the generation process, put an integer or 0 for random): "
 
 REM Run your Python file here
-python %~dp0Scripts\install_and_run_no_ui.py "\"%your_prompt%\"" %max_new_tokens% %repetition_penalty% %temperature% %top_p% %top_k% %seed%
+python %~dp0Scripts\install_and_run_no_ui.py "\"%your_prompt%\"" %max_new_tokens% %repetition_penalty% %temperature% %model_precision_type% %top_p% %top_k% %seed%
 
 REM Print the step to the terminal
 echo Deactivating the virtual environment...
