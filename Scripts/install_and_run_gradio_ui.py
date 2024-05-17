@@ -14,17 +14,16 @@ else:
     device = "cpu"
     print("Using CPU")
 
-# Load the tokenizer and model
+# Load the tokenizer
 tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-small")
-model = T5ForConditionalGeneration.from_pretrained("roborovski/superprompt-v1", device_map="auto", torch_dtype="auto")
-
-model.to(device)
-
-print(f"Loaded model succesfully in auto precision type on {'GPU' if device == 'cuda' else 'CPU'}! Loading inference...")
-
 
 # run ui
-def generate(your_prompt, max_new_tokens, repetition_penalty, temperature, top_p, top_k, seed):
+def generate(your_prompt, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed):
+
+    if model_precision_type == "fp16":
+        dtype = torch.float16
+    elif model_precision_type == "fp32":
+        dtype = torch.float32
     
     input_text = f"Expand the following prompt to add more detail: {your_prompt}"
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(device)
@@ -58,6 +57,8 @@ repetition_penalty = gr.Slider(value=1.2, minimum=0, maximum=2, step=0.05, inter
     
 temperature = gr.Slider(value=0.5, minimum=0, maximum=1, step=0.05, interactive=True, label="Temperature", info="Higher values produce more diverse outputs")
 
+model_precision_type = gr.Dropdown(["fp16", "fp32"], value="fp16", label="Model Precision Type", info="The precision type to load the model, like fp16 which is faster, or fp32 which is more precise but more resource consuming")
+
 top_p = gr.Slider(value=1, minimum=0, maximum=2, step=0.05, interactive=True, label="Top P", info="Higher values sample more low-probability tokens")
 
 top_k = gr.Slider(value=1, minimum=1, maximum=100, step=1, interactive=True, label="Top K", info="Higher k means more diverse outputs by considering a range of tokens")
@@ -65,12 +66,12 @@ top_k = gr.Slider(value=1, minimum=1, maximum=100, step=1, interactive=True, lab
 seed = gr.Number(value=42, interactive=True, label="Seed", info="A starting point to initiate the generation process, put 0 for a random one")
 
 examples = [
-    ["A storefront with 'Text to Image' written on it.", 512, 1.2, 0.5, 1, 50, 42]
+    ["A storefront with 'Text to Image' written on it.", "fp16", 512, 1.2, 0.5, 1, 50, 42]
 ]
 
 gr.Interface(
     fn=generate,
-    inputs=[your_prompt, max_new_tokens, repetition_penalty, temperature, top_p, top_k, seed],
+    inputs=[your_prompt, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed],
     outputs=gr.Textbox(label="Better Prompt"),
     title="SuperPrompt-v1",
     description='Make your prompts more detailed! <br> <a href="https://huggingface.co/roborovski/superprompt-v1">Model used</a> <br> <a href="https://brianfitzgerald.xyz/prompt-augmentation/">Model Blog</a> <br> Task Prefix: "Expand the following prompt to add more detail:" is already setted! <br> Ports made by [Nick088](https://linktr.ee/Nick088)',
