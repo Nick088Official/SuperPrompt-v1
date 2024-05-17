@@ -25,7 +25,7 @@ model.to(device)
 print(f"Loaded model succesfully in auto precision on {'GPU' if device == 'cuda' else 'CPU'}! Loading inference...")
 
 
-def main(your_prompt, max_new_tokens, repetition_penalty, temperature, top_p, top_k, seed):
+def main(your_prompt, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed):
 
     torch.manual_seed(seed)
     
@@ -56,13 +56,13 @@ if __name__ == "__main__":
     parser.add_argument("max_new_tokens", type=float, help="Maximum number of the tokens to generate")
     parser.add_argument("repetition_penalty", type=float, help="The higher the less the AI repeats itself")
     parser.add_argument("temperature", type=float, help="Higher values produce more diverse outputs")
+    parser.add_argument('model_precision_type', type=str, help='The precision type to load the model, like fp16 which is faster, or fp32 which gives better results')
     parser.add_argument("top_p", type=float, help="Higher values sample more low-probability tokens")
     parser.add_argument("top_k", type=int, help="Higher k means more diverse outputs by considering a range of tokens")
     parser.add_argument("seed", type=int, help="Seed for the generation process")
 
     # Parse the command-line arguments
     args = parser.parse_args()
-
 
     # Get user prompt
     your_prompt = args.your_prompt
@@ -82,8 +82,11 @@ if __name__ == "__main__":
     # Get top_k
     top_k = args.top_k
 
+    # Get precision model type
+    model_precision_type = args.model_precision_type
+
     # Get seed
     seed = args.seed
 
 
-    main(your_prompt, max_new_tokens, repetition_penalty, temperature, top_p, top_k, seed)
+    main(your_prompt, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed)
