@@ -34,7 +34,7 @@ def main(your_prompt, max_new_tokens, repetition_penalty, temperature, model_pre
     else:
       seed = seed
       
-    input_text = f""
+    input_text = f"Expand the following prompt to add more detail: {your_prompt}"
     # Tokenize and convert to tensor
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(device)
 
