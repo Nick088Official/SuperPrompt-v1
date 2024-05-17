@@ -66,7 +66,7 @@ top_k = gr.Slider(value=1, minimum=1, maximum=100, step=1, interactive=True, lab
 seed = gr.Number(value=42, interactive=True, label="Seed", info="A starting point to initiate the generation process, put 0 for a random one")
 
 examples = [
-    ["A storefront with 'Text to Image' written on it.", "fp16", 512, 1.2, 0.5, 1, 50, 42]
+    ["A storefront with 'Text to Image' written on it.", 512, 1.2, 0.5, "fp16", 1, 50, 42]
 ]
 
 gr.Interface(
