@@ -40,22 +40,17 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ### Precompiled
-As its a very small model (77M parameters) it can run easily even on old PCs CPU:
+As its a very small model (77M parameters) it can run easily and fast even on old PCs CPU:
 
+#### INSTALLATION
 1. [Install Python](https://www.python.org/downloads/), if you haven't already.
 2. Click on Code and download as a zip.
 3. Extract it.
 4. Open the install_and_run_no_ui.bat if you want to use it without ui, or install_and_run_gradio_ui.bat to use the Gradio UI (if its your first time installing the package transformers on Windows, then you may wanna check this https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later).
 5. (UI VERSION ONLY): Ctrl+Click the Local URL link that will appear after installing (DO NOT CLOSE THE CMD UNTIL YOU'RE DONE).
-6. After it downloads everything it will ask you for the prompt you want to make better.
-7. Put the Max New Tokens, controls how long is the output, reccomended to the max which is 512.
-8. Put the Repetition Penalty, the higher the less the ai repeats itself (it goes from 1.0 to 2.0).
-9. Put the Temperature, Higher values produce more diverse outputs, (from 0 to 1).
-10. Put the Top P, Higher values sample more low-probability tokens, (from 0 to 2).
-11. Put the Top K, Higher k means more diverse outputs by considering a range of tokens, (from 1 to 100).
-12. Put the Seed, A starting point to initiate the generation process, any integers, put 0 if you want it to be random.
-13. After you will get the generated better prompt and it will start all again.
-14. If you want to delete it, delete the venvs folder and then put to the trash bin the .zip and folders of the SuperPrompt-v1.
+6. After it installs everything, look at ##PARAMETERS for how to use them.
+7. After you will get the generated better prompt and it will start all again.
+8. If you want to delete it, delete the venvs folder and then put to the trash bin the .zip and folders of the SuperPrompt-v1.
 
 ## Online Usage
 ### Google Colab
@@ -78,14 +73,27 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 ### Hugging Face Space
 [Hugging Face Space🤗](https://huggingface.co/spaces/Nick088/SuperPrompt-v1)
 
+## PARAMETERS
+- **Your Prompt:** The prompt you want to make better.
+- **Task Prefix:** which is The prompt prefix for how the AI should make yours better, recommended "Expand the following prompt to add more detail"
+- **Max New Tokens:** controls how long is the output, reccomended to the max which is 512.
+- **Repetition Penalty:** the higher the less the ai repeats itself, it goes from 1.0 to 2.0, 0.7 is suggested.
+- **Temperature:** Higher values produce more diverse outputs, it goes from 0 to 1, 0.5 is suggested.
+- **Top P:** Higher values sample more low-probability tokens, varies from 0 to 2, 1 is suggested.
+- **Top K:** Higher k means more diverse outputs by considering a range of tokens, from 1 to 100, 50 is suggested.
+- **Seed:** A starting point to initiate the generation process, any integers, put 0 if you want it to be random.
+
+
 ## CREDITS
 - [Nick088](https://linktr.ee/Nick088) for the ports.
 - [roborovski](https://huggingface.co/roborovski) for making the AI Model
 - [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx) added venvs to the local version
 
 ## CHANGELOG
+### Update - May 26th, 2024
+Correctly use the seed via the tranformers library instead of the torch one, and added a task prefix parameter which is the prompt for how to expand the your prompt to the AI.
 ### Update - May 17th, 2024
-Added back the model precision option for every ports and also improved a bit more the local version
+Added back the model precision option for every ports and also improved a bit more the local version.
 ### Update - May 16th, 2024
 Improved the Local Version and removed the model precision option, so i used auto instead.
 ### Update - April 14th, 2024
