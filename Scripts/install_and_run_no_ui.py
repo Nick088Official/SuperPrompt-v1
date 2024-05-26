@@ -2,11 +2,11 @@ import os
 import subprocess
 import random
 import time
+import transformers
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 import torch
 import random
 import argparse
-
 
 if torch.cuda.is_available():
     device = "cuda"
@@ -16,35 +16,41 @@ else:
     print("Using CPU")
 
 
-# Load the tokenizer and model
-tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-small")
+# Load the tokenizer and model to device
+tokenizer = T5Tokenizer.from_pretrained("roborovski/superprompt-v1")
 model = T5ForConditionalGeneration.from_pretrained("roborovski/superprompt-v1", device_map="auto", torch_dtype="auto")
-
 model.to(device)
 
 print(f"Loaded model succesfully in auto precision on {'GPU' if device == 'cuda' else 'CPU'}! Loading inference...")
 
 
-def main(your_prompt, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed):
-
-    torch.manual_seed(seed)
-    
+def main(your_prompt, task_prefix, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed):
     if seed == 0:
-      seed = random.randint(1, 100000)
-    else:
-      seed = seed
+        seed = random.randint(1, 2**32-1)
+    transformers.set_seed(seed)
+    
+    if model_precision_type == "fp16":
+        dtype = torch.float16
+    elif model_precision_type == "fp32":
+        dtype = torch.float32
+
+    model.to(dtype)
       
-    input_text = f"Expand the following prompt to add more detail: {your_prompt}"
-    # Tokenize and convert to tensor
+    input_text = f"{task_prefix}: {your_prompt}"
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(device)
-
-    # Generate outputs
-    outputs = model.generate(input_ids, max_new_tokens=max_new_tokens, repetition_penalty=repetition_penalty, do_sample=True, temperature=temperature, top_p=top_p, top_k=top_k)
-
-    # Decode and print the output
-    dirty_text = tokenizer.decode(outputs[0])
-    text = dirty_text.replace("<pad>", "").replace("</s>", "")
-    print(f"Generated Better Prompt: {text}")
+        
+    outputs = model.generate(
+        input_ids,
+        max_new_tokens=max_new_tokens,
+        repetition_penalty=repetition_penalty,
+        do_sample=True,
+        temperature=temperature,
+        top_p=top_p,
+        top_k=top_k,
+    )
+        
+    better_prompt = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    print(f"Generated Better Prompt: {better_prompt}")
 
 if __name__ == "__main__":
 
@@ -52,7 +58,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # Add arguments for each input value
-    parser.add_argument("your_prompt", type=str, help="The prompt you want to make better")
+    parser.add_argument("your_prompt", type=str, help="Your Prompt that you wanna make better")
+    parser.add_argument("task_prefix", type=str, help="The prompt prefix for how the AI should make yours better")
     parser.add_argument("max_new_tokens", type=float, help="Maximum number of the tokens to generate")
     parser.add_argument("repetition_penalty", type=float, help="The higher the less the AI repeats itself")
     parser.add_argument("temperature", type=float, help="Higher values produce more diverse outputs")
@@ -63,6 +70,9 @@ if __name__ == "__main__":
 
     # Parse the command-line arguments
     args = parser.parse_args()
+
+    # Get task prefix
+    task_prefix = args.task_prefix
 
     # Get user prompt
     your_prompt = args.your_prompt
@@ -89,4 +99,4 @@ if __name__ == "__main__":
     seed = args.seed
 
 
-    main(your_prompt, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed)
+    main(your_prompt, task_prefix, max_new_tokens, repetition_penalty, temperature, model_precision_type, top_p, top_k, seed)
