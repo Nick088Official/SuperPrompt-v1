@@ -3,4 +3,4 @@ protobuf
 accelerate 
 sentencepiece 
 transformers 
-gradio==4.21.0
+gradio==4.36.0
