@@ -87,6 +87,8 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 - [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx) added venvs to the local version
 
 ## CHANGELOG
+### Update - June 12th, 2024
+Reduced the minimum max new tokens to 50 instead of 250, and fixed a bug where you couldn't put repetition penalty on 2 for the web ui
 ### Update - May 26th, 2024
 Correctly use the seed via the tranformers library instead of the torch one, and added a task prefix parameter which is the prompt for how to expand the your prompt to the AI.
 ### Update - May 17th, 2024
