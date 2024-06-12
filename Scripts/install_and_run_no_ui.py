@@ -35,7 +35,9 @@ def main(your_prompt, task_prefix, max_new_tokens, repetition_penalty, temperatu
         dtype = torch.float32
 
     model.to(dtype)
-      
+
+    repetition_penalty = float(repetition_penalty)
+    
     input_text = f"{task_prefix}: {your_prompt}"
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(device)
         
