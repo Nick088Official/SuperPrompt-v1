@@ -28,6 +28,8 @@ def generate(your_prompt, task_prefix, max_new_tokens, repetition_penalty, tempe
     elif model_precision_type == "fp32":
         dtype = torch.float32
     model.to(dtype)
+
+    repetition_penalty = float(repetition_penalty)
     
     input_text = f"{task_prefix}: {your_prompt}"
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(device)
@@ -50,7 +52,7 @@ your_prompt = gr.Textbox(label="Your Prompt", info="Your Prompt that you wanna m
 
 task_prefix = gr.Textbox(label="Task Prefix", info="The prompt prefix for how the AI should make yours better",value="Expand the following prompt to add more detail")
 
-max_new_tokens = gr.Slider(value=512, minimum=250, maximum=512, step=1, label="Max New Tokens", info="The maximum numbers of new tokens, controls how long is the output")
+max_new_tokens = gr.Slider(value=512, minimum=50, maximum=512, step=1, label="Max New Tokens", info="The maximum numbers of new tokens, controls how long is the output")
     
 repetition_penalty = gr.Slider(value=1.2, minimum=0, maximum=2, step=0.05, label="Repetition Penalty", info="Penalize repeated tokens, making the AI repeat less itself")
     
