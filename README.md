@@ -79,7 +79,7 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 
 
 ### Hugging Face Space
-[Hugging Face Space🤗](https://huggingface.co/spaces/Nick088/SuperPrompt-v1)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Nick088/SuperPrompt-v1)
 
 ## CREDITS
 - [Nick088](https://linktr.ee/Nick088) for the ports.
