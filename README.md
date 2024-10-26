@@ -87,6 +87,8 @@ Run <a target="_blank" href="https://colab.research.google.com/github/Nick088Off
 - [Poopmaster/Poiqazwsx](https://github.com/poiqazwsx) added venvs to the local version
 
 ## CHANGELOG
+### Update - October 26th, 2024
+Fix https://github.com/Nick088Official/SuperPrompt-v1/issues/5.
 ### Update - June 12th, 2024
 Reduced the minimum max new tokens to 50 instead of 250, and fixed a bug where you couldn't put repetition penalty on 2 for the web ui
 ### Update - May 26th, 2024
